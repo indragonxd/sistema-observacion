@@ -1,0 +1,20 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav-content>
+
+    <mat-toolbar class="justify-content-sm-between">
+      <nav class="nav-bar">
+        <a mat-button routerLink="/home" routerLinkActive="activo">INICIO</a>
+        
+      </nav>
+      
+      <nav class="nav-bar ">
+        <a class="ml-3" mat-button routerLink="/usuarios" routerLinkActive="activo">USUARIOS</a>
+        <a class="ml-3" mat-button routerLink="/vehiculos" routerLinkActive="activo">VEHICULOS</a>
+        <a class="ml-3" mat-button routerLink="/observaciones" routerLinkActive="activo">OBSERVACIONES</a>
+      </nav>
+      <button mat-raised-button (click)="logout()">Cerrar Sesion</button>
+
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

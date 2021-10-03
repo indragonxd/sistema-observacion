@@ -1,0 +1,26 @@
+<form [formGroup]="form" (ngSubmit)='editObs($event)' class="text-center">
+  <mat-card>
+    <div class="row mb-3">
+      <mat-card-header>
+        <mat-card-title>Edicion</mat-card-title>
+      </mat-card-header>
+    </div>
+
+      <mat-card-content>
+
+        <div class="row">
+          <div class="col-xs">
+            <mat-form-field>
+              <input placeholder="Detalle" matInput formControlName="descripcion" type="text">
+            </mat-form-field>
+          </div>
+        </div>
+      </mat-card-content>
+
+    <mat-card-actions>
+      <button mat-raised-button type="submit">Editar</button>
+      <button mat-raised-button type="button" (click)="close()">Cancelar</button>
+    </mat-card-actions>
+
+  </mat-card>
+</form>

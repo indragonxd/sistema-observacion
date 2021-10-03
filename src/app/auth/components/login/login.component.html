@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row d-flex justify-content-center">
+    <form [formGroup]="form" (ngSubmit)="login($event)" >
+      <mat-card class="">
+
+        <mat-card-content >
+          <div class="row">
+            <div class="col-xs-6 text-center mb-4">
+              <h2>Login</h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-6 text-center">
+              <mat-form-field>
+                <input placeholder="Nombre Usuario" formControlName="email" matInput type="email">
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-6 text-center">
+              <mat-form-field>
+                <input placeholder="password" formControlName="password" matInput type="password">
+              </mat-form-field>
+            </div>
+          </div>
+        </mat-card-content>
+        <mat-card-actions class="col-xs-6 text-center">
+          <button [disabled]="form.invalid" mat-raised-button type="submit">Ingresar</button>
+          <button [disabled]="form.invalid" mat-raised-button type="button" (click)="registrar()">Registrarse</button>
+        </mat-card-actions>
+        <div *ngIf="nuevo" class="text-center">Usuario creado!</div>
+      </mat-card>
+
+    </form>
+  </div>
+</div>

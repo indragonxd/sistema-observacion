@@ -1,0 +1,40 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-sm-6">
+      <h2>Observaciones por empleado</h2>
+      <table mat-table [dataSource]="registroXUsuario" class="mat-elevation-z8 observaciones-table">
+
+        <ng-container matColumnDef="empleado">
+          <th mat-header-cell *matHeaderCellDef> Empleado</th>
+          <td mat-cell *matCellDef="let usuario"> {{usuario.name}} </td>
+        </ng-container>
+      
+        <ng-container matColumnDef="registradas">
+          <th mat-header-cell *matHeaderCellDef> Registradas </th>
+          <td mat-cell *matCellDef="let usuario"> {{usuario.registrado}} </td>
+        </ng-container>
+      
+        <ng-container matColumnDef="aceptadas">
+          <th mat-header-cell *matHeaderCellDef> Aceptadas </th>
+          <td mat-cell *matCellDef="let usuario"> {{usuario.aceptado}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="rechazadas">
+          <th mat-header-cell *matHeaderCellDef> Rechazadas </th>
+          <td mat-cell *matCellDef="let usuario"> {{usuario.rechazado}} </td>
+        </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+      </table>
+    </div>
+    <div class="col-sm-6">
+      <h2>Observaciones totales</h2>
+      <mat-card>
+      <canvas id="obsTotales" width="400" height="400">
+      </canvas>
+    </mat-card>
+    </div>
+  </div>
+</div>
